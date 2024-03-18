@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy and Sell</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .container {
+    background-image: url('bike01.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 15px 50px;
+    margin: 10px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+  }
+
+  .button:hover {
+    background-color: #45a049;
+  }
+
+  .button-sell {
+    background-color: #f44336;
+  }
+
+  .button-sell:hover {
+    background-color: #d32f2f;
+  }
+  h1{
+    background-color: #393cfd; 
+    color:white; 
+    font-family: Arial, sans-serif; 
+    font-size: 24px; 
+    padding: 10px; 
+    border-radius: 5px; 
+  }
+
+  .logo {
+            width: 250px; /* Adjust the width as needed */
+            height: auto;
+            display: block;
+            position: absolute;
+            top: 10px; /* Adjust top position as needed */
+            left: 10px; /* Adjust left position as needed */
+        }
+
+
+</style>
+</head>
+<body>
+<img src="mainlogo.png" alt="Logo" class="logo">
+
+<div class="container">
+  <h1>Welcome to Buy and Sell Your Old Bikes</h1>
+  <br>
+  
+  <a href="formbuy.html" class="button">Buy</a>
+  <a href="formsell.html" class="button button-sell">Sell</a>
+</div>
+
+</body>
+</html>

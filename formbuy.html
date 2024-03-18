@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Buy Detail Form</title>
+    <style>
+        /* Styles for form layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        label {
+            padding: 10px 0;
+        }
+        h2{
+            text-align: center;
+        }
+
+        .logo {
+            width: 250px; /* Adjust the width as needed */
+            height: auto;
+            display: block;
+            position: absolute;
+            top: 10px; /* Adjust top position as needed */
+            left: 10px; /* Adjust left position as needed */
+        }
+    </style>
+</head>
+<body>
+    <img src="mainlogo.png" alt="Logo" class="logo">
+    <h2>Bike Buy Detail Form</h2>
+    <form method="post" id="form">
+        <h3>Personal Information:</h3>
+        <label for="full_name">Full Name:</label>
+        <input type="text" name="full_name" required>
+        
+        <label for="address">Address:</label>
+        <input type="text" name="address" required>
+        
+        <label for="city">City:</label>
+        <input type="text"  name="city" required>
+        
+        <label for="state_province">State:</label>
+        <input type="text"  name="state" required>
+        
+        <label for="zip_postal_code">Pin code:</label>
+        <input type="text"  name="pin_code" required>
+        
+        <label for="email">Email Address:</label>
+        <input type="email"  name="email" required>
+        
+        <label for="phone_number">Phone Number:</label>
+        <input type="text"  name="phone_number" required>
+
+        <label for="total_price">Desire Price:</label>
+        <input type="text"  name="total_price" required>
+        
+        <div id="res" style="color: green; font-size: 20px;"></div>
+        <button name="btn" class="btn">Submit</button>
+    </form>
+
+    <script>
+        let url = 'https://script.google.com/macros/s/AKfycbz0kvdfPIJi_EZLst-ZqJf51XWRKh5JwIS-ATWl0RFd0IOzyHqE5c6bha876c6mn9ofZA/exec'
+        let form = document.querySelector('#form');
+        form.addEventListener("submit",(e)=>{
+            e.target.btn.innerHTML="Submitting....";
+            let d = new FormData(form);
+            fetch(url,{
+                method:"POST",
+                body:d
+            }).then((res)=>res.text())
+            .then((finalRes)=>{
+                e.target.btn.innerHTML="Submit"
+                document.getElementById("res").innerHTML=finalRes;
+                form.reset();
+                setTimeout(()=>{
+                    document.getElementById("res").innerHTML="";
+                },4000)
+            })
+            e.preventDefault();
+        })
+    </script>
+</body>
+</html>
+
+
+
+
